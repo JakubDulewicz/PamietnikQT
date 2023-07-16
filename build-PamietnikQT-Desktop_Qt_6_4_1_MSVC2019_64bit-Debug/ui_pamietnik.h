@@ -47,7 +47,15 @@ public:
         addWpisButton->setGeometry(QRect(540, 500, 201, 41));
         listaWpisowTextEdit = new QTextEdit(centralwidget);
         listaWpisowTextEdit->setObjectName("listaWpisowTextEdit");
+        listaWpisowTextEdit->setEnabled(true);
         listaWpisowTextEdit->setGeometry(QRect(30, 20, 741, 291));
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(listaWpisowTextEdit->sizePolicy().hasHeightForWidth());
+        listaWpisowTextEdit->setSizePolicy(sizePolicy);
+        listaWpisowTextEdit->setMaximumSize(QSize(741, 291));
+        listaWpisowTextEdit->setLineWrapMode(QTextEdit::NoWrap);
         trescWpisuTextEdit = new QTextEdit(centralwidget);
         trescWpisuTextEdit->setObjectName("trescWpisuTextEdit");
         trescWpisuTextEdit->setGeometry(QRect(30, 320, 741, 71));

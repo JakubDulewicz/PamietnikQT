@@ -6,6 +6,8 @@ Pamietnik::Pamietnik(QWidget *parent)
     , ui(new Ui::Pamietnik)
 {
     ui->setupUi(this);
+    ui->dataWpisuDateTime->setDateTime(QDateTime::currentDateTime());
+    ui->listaWpisowTextEdit->setLineWrapMode(QTextEdit::NoWrap);
 }
 
 Pamietnik::~Pamietnik()
@@ -18,9 +20,22 @@ void Pamietnik::addWpis(Wpis &wpis)
     vectorWpisow.push_back(wpis);
 }
 
-void Pamietnik::fillListaWpisow() // Do ANALIZY!!!
+void Pamietnik::fillListaWpisow() // Do ANALIZY!!! // Podzielić na funkcje
 {
     ui->listaWpisowTextEdit->clear();
+    int width = (ui->listaWpisowTextEdit->size().width());
+    QFontMetrics fontMetrics(ui->listaWpisowTextEdit->currentFont());
+    int dashWidth = fontMetrics.horizontalAdvance("-");
+    int size = (width/dashWidth) + 1;
+
+
+
+    QString line = QString(size,'-');
+
+    qDebug() << width;
+    qDebug() << dashWidth;
+    qDebug() << size;
+
     QTextCursor cursor(ui->listaWpisowTextEdit->textCursor());
 
     for (int i = 0; i < this->vectorWpisow.size(); i++) {
@@ -39,9 +54,18 @@ void Pamietnik::fillListaWpisow() // Do ANALIZY!!!
         cursor.insertText("   ");
         cursor.insertText(contentText,normalFormat);
         cursor.insertText("\n");
-        cursor.insertText("-----------------------------\n");
+        cursor.insertText(line);
+        cursor.insertText("\n");
     }
 }
+
+void Pamietnik::fillListaWpisowAlterantaive()
+{
+    ui->listaWpisowTextEdit->clear();
+
+}
+
+
 
 bool Pamietnik::checkDuplicatedWpis(Wpis &wpis)
 {

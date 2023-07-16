@@ -18,6 +18,7 @@ public:
     ~Pamietnik();
     void addWpis(Wpis &wpis);
     void fillListaWpisow();
+    void fillListaWpisowAlterantaive();
     bool checkDuplicatedWpis(Wpis &wpis);
 
 
