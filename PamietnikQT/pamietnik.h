@@ -5,6 +5,7 @@
 #include <vector>
 #include <algorithm>
 #include <QDebug>
+#include <QFile>
 #include "qtextedit.h"
 #include "wpis.h"
 QT_BEGIN_NAMESPACE
@@ -18,6 +19,10 @@ class Pamietnik : public QMainWindow
 public:
     Pamietnik(QWidget *parent = nullptr);
     ~Pamietnik();
+
+    void loadWpisyFromFile();
+    void saveWpisyToFile();
+
     void fillListaWpisow();
     void initVectorWpisow();
     void initCurrentWpis();
@@ -30,15 +35,16 @@ public:
 private slots:
 
     void on_addWpisButton_clicked();
-
     void on_previousWpisPushButton_clicked();
-
     void on_nextWpispPushButton_clicked();
 
 private:
+
+
     Ui::Pamietnik *ui;
     std::vector<Wpis> vectorWpisow;
     int currentWpis;
+    QFile file;
 
 
 };

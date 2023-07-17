@@ -6,11 +6,15 @@ Pamietnik::Pamietnik(QWidget *parent)
     , ui(new Ui::Pamietnik)
 {
     ui->setupUi(this);
+
     ui->dataWpisuDateTime->setDateTime(QDateTime::currentDateTime());
     ui->listaWpisowTextEdit->setLineWrapMode(QTextEdit::NoWrap);
-    initVectorWpisow();
-    initCurrentWpis();
 
+    //initVectorWpisow();
+    initCurrentWpis();
+    file.setFileName("Pamietnik.txt");
+    //saveWpisyToFile();
+    loadWpisyFromFile();
     printLackOfWpis(*ui->previousWpisTextEdit);
     addWpisAndSetupFont(*ui->currentWpisTextEdit,0);
     addWpisAndSetupFont(*ui->nextWpisTextEdit,1);
@@ -20,6 +24,52 @@ Pamietnik::~Pamietnik()
 {
     delete ui;
 }
+
+void Pamietnik::loadWpisyFromFile()
+{
+    if(file.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
+        QTextStream inStream(&file);
+        while (!inStream.atEnd())
+        {
+            QString line = inStream.readLine();
+            QStringList fields = line.split("|");
+
+            if (fields.size() >= 2)
+            {
+                QString dateText = fields[0].trimmed();
+                QString contentText = fields[1].trimmed();
+
+                QDateTime date = QDateTime::fromString(dateText, "dd.MM.yyyy hh:mm:ss");
+
+                Wpis wpis(contentText, date);
+                vectorWpisow.push_back(wpis);
+            }
+        }
+
+    }
+}
+void Pamietnik::saveWpisyToFile()
+{
+    QFile file("Pamietnik.txt");
+    if (file.open(QIODevice::WriteOnly | QIODevice::Text))
+    {
+        QTextStream outStream(&file);
+
+        for (const Wpis& wpis : vectorWpisow)
+        {
+            QString dateText = wpis.getDate().toString("dd.MM.yyyy hh:mm:ss");
+            QString contentText = wpis.getContent();
+
+            QString line = dateText + " | " + contentText;
+            outStream << line << "\n";
+        }
+
+        file.close();
+    }
+}
+
+
 
 void Pamietnik::fillListaWpisow() // Do ANALIZY!!!
 {
@@ -65,7 +115,6 @@ void Pamietnik::initVectorWpisow()
 
 void Pamietnik::initCurrentWpis()
 {
-    if(!vectorWpisow.empty())
         this->currentWpis = 0;
 }
 
