@@ -22,14 +22,22 @@ public:
 
     void loadWpisyFromFile();
     void saveWpisyToFile();
+    void loadSetupFromFile();
+    void saveSetupToFile();
 
     void fillListaWpisow();
     void initVectorWpisow();
     void initCurrentWpis();
+
     QString generateDelimiter();
-    void addWpisAndSetupFont(QTextEdit &textEdit, int index);
+
+
+    void printWpisAndSetupFont(QTextEdit &textEdit, int index);
     void printLackOfWpis(QTextEdit &textEdit);
+    void refreshAllPrintWpis(QTextEdit &previousTextEdit, QTextEdit &currentTextEdit, QTextEdit &nextTextEdit ,int index);
     bool checkDuplicatedWpis(Wpis &wpis);
+
+
 
 
 private slots:
@@ -44,7 +52,8 @@ private:
     Ui::Pamietnik *ui;
     std::vector<Wpis> vectorWpisow;
     int currentWpis;
-    QFile file;
+    QFile fileDatabase;
+    QFile setup;
 
 
 };
