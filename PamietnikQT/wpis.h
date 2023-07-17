@@ -15,6 +15,7 @@ public:
 
     QDateTime getDate() const;
     QString getContent() const;
+    QString generateWpis();
 
 private:
     QString content;

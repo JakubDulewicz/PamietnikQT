@@ -317,6 +317,21 @@ release\moc_pamietnik.cpp: ..\PamietnikQT\pamietnik.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\QTransform \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qnativeinterface.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qtabwidget.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\QDebug \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qtextedit.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qabstractscrollarea.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qframe.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qtextdocument.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qtextoption.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qtextcursor.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qtextformat.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qpen.h \
+		..\PamietnikQT\wpis.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\QDateTime \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qdatetime.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcalendar.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qlocale.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\QString \
 		release\moc_predefs.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\bin\moc.exe
 	D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include C:/Users/Zusoviron/Desktop/QT/PamietnikQT/build-PamietnikQT-Desktop_Qt_6_4_1_MSVC2019_64bit-Debug/release/moc_predefs.h -ID:/Aplikacje/QTStarte/6.4.1/msvc2019_64/mkspecs/win32-msvc -IC:/Users/Zusoviron/Desktop/QT/PamietnikQT/PamietnikQT -ID:/Aplikacje/QTStarte/6.4.1/msvc2019_64/include -ID:/Aplikacje/QTStarte/6.4.1/msvc2019_64/include/QtWidgets -ID:/Aplikacje/QTStarte/6.4.1/msvc2019_64/include/QtGui -ID:/Aplikacje/QTStarte/6.4.1/msvc2019_64/include/QtCore -I. -ID:\Aplikacje\Microsoft\VisualStudio\VC\Tools\MSVC\14.34.31933\include -ID:\Aplikacje\Microsoft\VisualStudio\VC\Tools\MSVC\14.34.31933\ATLMFC\include -ID:\Aplikacje\Microsoft\VisualStudio\VC\Auxiliary\VS\include -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" ..\PamietnikQT\pamietnik.h -o release\moc_pamietnik.cpp
@@ -482,6 +497,21 @@ release\main.obj: ..\PamietnikQT\main.cpp ..\PamietnikQT\pamietnik.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\QTransform \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qnativeinterface.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qtabwidget.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\QDebug \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qtextedit.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qabstractscrollarea.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qframe.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qtextdocument.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qtextoption.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qtextcursor.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qtextformat.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qpen.h \
+		..\PamietnikQT\wpis.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\QDateTime \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qdatetime.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcalendar.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qlocale.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\QString \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\QApplication \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qapplication.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcoreapplication.h \
@@ -503,7 +533,6 @@ release\main.obj: ..\PamietnikQT\main.cpp ..\PamietnikQT\pamietnik.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qpromise.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qguiapplication.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qinputmethod.h \
-		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qlocale.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qguiapplication_platform.h
 
 release\pamietnik.obj: ..\PamietnikQT\pamietnik.cpp ..\PamietnikQT\pamietnik.h \
@@ -644,9 +673,149 @@ release\pamietnik.obj: ..\PamietnikQT\pamietnik.cpp ..\PamietnikQT\pamietnik.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\QTransform \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qnativeinterface.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qtabwidget.h \
-		ui_pamietnik.h
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\QDebug \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qtextedit.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qabstractscrollarea.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qframe.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qtextdocument.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qtextoption.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qtextcursor.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qtextformat.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qpen.h \
+		..\PamietnikQT\wpis.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\QDateTime \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qdatetime.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcalendar.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qlocale.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\QString \
+		ui_pamietnik.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\QVariant \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\QApplication \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qapplication.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcoreapplication.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qeventloop.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcoreapplication_platform.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qjnitypes.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qfuture.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qfutureinterface.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qmutex.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qtsan_impl.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qresultstore.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qfuture_impl.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qthreadpool.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qthread.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qdeadlinetimer.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qelapsedtimer.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qrunnable.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qexception.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qpromise.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qguiapplication.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qinputmethod.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qguiapplication_platform.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\QDateTimeEdit \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qdatetimeedit.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qabstractspinbox.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qvalidator.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qregularexpression.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\QMenuBar \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qmenubar.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qmenu.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\QPushButton \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qpushbutton.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qabstractbutton.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\QStatusBar \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qstatusbar.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\QTextEdit \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\QWidget
 
-release\wpis.obj: ..\PamietnikQT\wpis.cpp ..\PamietnikQT\wpis.h
+release\wpis.obj: ..\PamietnikQT\wpis.cpp ..\PamietnikQT\wpis.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\QDateTime \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qdatetime.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qstring.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qchar.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qglobal.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qconfig-bootstrapped.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qconfig.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qtcore-config.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qtconfigmacros.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qtcoreexports.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qsystemdetection.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qprocessordetection.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcompilerdetection.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qtypeinfo.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcontainerfwd.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qsysinfo.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qlogging.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qflags.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcompare_impl.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qatomic.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qbasicatomic.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qatomic_bootstrap.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qgenericatomic.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qatomic_cxx11.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qglobalstatic.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qnumeric.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qversiontagging.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qforeach.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qstringview.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qbytearray.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qrefcount.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qnamespace.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qtmetamacros.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qarraydata.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qpair.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qarraydatapointer.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qarraydataops.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcontainertools_impl.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qbytearrayalgorithms.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qbytearrayview.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qstringfwd.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qstringliteral.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qstringalgorithms.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qanystringview.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qutf8stringview.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qstringtokenizer.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qstringbuilder.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qshareddata.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qhashfunctions.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcalendar.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qlocale.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qvariant.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qmetatype.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcompare.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qscopeguard.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qdatastream.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qscopedpointer.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qiodevicebase.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qiterable.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qmetacontainer.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcontainerinfo.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qtaggedpointer.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qalgorithms.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qmath.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qobjectdefs.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qobjectdefs_impl.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qdebug.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qtextstream.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qstringconverter_base.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcontiguouscache.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qsharedpointer.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qsharedpointer_impl.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qlist.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qiterator.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qbytearraylist.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qstringlist.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qstringmatcher.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qmap.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qshareddata_impl.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qset.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qhash.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qvarlengtharray.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qobject.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcoreevent.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qobject_impl.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qbindingstorage.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\QString
 
 release\moc_pamietnik.obj: release\moc_pamietnik.cpp 
 

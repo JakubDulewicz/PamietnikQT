@@ -202,6 +202,7 @@ Makefile: ..\PamietnikQT\PamietnikQT.pro D:\Aplikacje\QTStarte\6.4.1\msvc2019_64
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\qt_config.prf \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\win32-msvc\qmake.conf \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\spec_post.prf \
+		.qmake.stash \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\exclusive_builds.prf \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\common\msvc-version.conf \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\toolchain.prf \
@@ -232,7 +233,6 @@ Makefile: ..\PamietnikQT\PamietnikQT.pro D:\Aplikacje\QTStarte\6.4.1\msvc2019_64
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\lib\Qt6Gui.prl \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\lib\Qt6Core.prl \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\lib\Qt6EntryPoint.prl \
-		.qmake.stash \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\build_pass.prf \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\lib\Qt6Widgetsd.prl \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\lib\Qt6Guid.prl \
@@ -357,6 +357,7 @@ D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\qt_functions.prf:
 D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\qt_config.prf:
 D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\win32-msvc\qmake.conf:
 D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\spec_post.prf:
+.qmake.stash:
 D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\exclusive_builds.prf:
 D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\common\msvc-version.conf:
 D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\toolchain.prf:
@@ -387,7 +388,6 @@ D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\lib\Qt6Widgets.prl:
 D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\lib\Qt6Gui.prl:
 D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\lib\Qt6Core.prl:
 D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\lib\Qt6EntryPoint.prl:
-.qmake.stash:
 D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\build_pass.prf:
 D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\lib\Qt6Widgetsd.prl:
 D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\lib\Qt6Guid.prl:

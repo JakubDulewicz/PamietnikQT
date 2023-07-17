@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <vector>
 #include <algorithm>
+#include <QDebug>
+#include "qtextedit.h"
 #include "wpis.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class Pamietnik; }
@@ -16,9 +18,12 @@ class Pamietnik : public QMainWindow
 public:
     Pamietnik(QWidget *parent = nullptr);
     ~Pamietnik();
-    void addWpis(Wpis &wpis);
     void fillListaWpisow();
-    void fillListaWpisowAlterantaive();
+    void initVectorWpisow();
+    void initCurrentWpis();
+    QString generateDelimiter();
+    void addWpisAndSetupFont(QTextEdit &textEdit, int index);
+    void printLackOfWpis(QTextEdit &textEdit);
     bool checkDuplicatedWpis(Wpis &wpis);
 
 
@@ -26,9 +31,14 @@ private slots:
 
     void on_addWpisButton_clicked();
 
+    void on_previousWpisPushButton_clicked();
+
+    void on_nextWpispPushButton_clicked();
+
 private:
     Ui::Pamietnik *ui;
     std::vector<Wpis> vectorWpisow;
+    int currentWpis;
 
 
 };

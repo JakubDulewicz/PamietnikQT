@@ -42,3 +42,8 @@ QString Wpis::getContent() const
     return content;
 }
 
+QString Wpis::generateWpis()
+{
+    return(this->date.toString() + " " + this->content);
+}
+
