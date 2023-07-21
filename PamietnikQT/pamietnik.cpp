@@ -1,6 +1,6 @@
 #include "pamietnik.h"
 #include "ui_pamietnik.h"
-
+//#include "wpis.h"
 Pamietnik::Pamietnik(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Pamietnik)
@@ -14,6 +14,7 @@ Pamietnik::Pamietnik(QWidget *parent)
 
     fileDatabase.setFileName("Pamietnik.txt");
     setup.setFileName("Setup.txt");
+    //initVectorWpisow();
     loadWpisyFromFile();
     loadSetupFromFile();
     //qDebug() << currentWpis;
@@ -94,7 +95,10 @@ void Pamietnik::loadSetupFromFile()
                     int value = valueText.toInt(&ok);
                     if (ok)
                     {
-                        currentWpis = value;
+                        if(value < 0)
+                            currentWpis = 0;
+                        else
+                            currentWpis = value;
                     }
                 }
             }
@@ -162,7 +166,7 @@ void Pamietnik::initVectorWpisow()
 
 void Pamietnik::initCurrentWpis()
 {
-        this->currentWpis = 0;
+    this->currentWpis = 0;
 }
 
 QString Pamietnik::generateDelimiter()
@@ -194,6 +198,13 @@ void Pamietnik::printWpisAndSetupFont(QTextEdit &textEdit, int index)
     cursor.insertText(contentText, normalFormat);
 }
 
+void Pamietnik::printEmptyVector(QTextEdit &previousTextEdit, QTextEdit &currentTextEdit, QTextEdit &nextTextEdit)
+{
+    previousTextEdit.clear();
+    nextTextEdit.clear();
+    printLackOfWpis(currentTextEdit);
+}
+
 void Pamietnik::printLackOfWpis(QTextEdit &textEdit)
 {
     textEdit.clear();
@@ -206,17 +217,22 @@ void Pamietnik::printLackOfWpis(QTextEdit &textEdit)
 
 void Pamietnik::refreshAllPrintWpis(QTextEdit &previousTextEdit, QTextEdit &currentTextEdit, QTextEdit &nextTextEdit, int index)
 {
-    if (currentWpis > 0)
-        this->printWpisAndSetupFont(previousTextEdit, currentWpis - 1);
+    if(vectorWpisow.empty())
+        printEmptyVector(previousTextEdit,currentTextEdit,nextTextEdit);
     else
-        this->printLackOfWpis(previousTextEdit);
+    {
+        if (currentWpis > 0)
+            this->printWpisAndSetupFont(previousTextEdit, currentWpis - 1);
+        else
+            this->printLackOfWpis(previousTextEdit);
 
-    this->printWpisAndSetupFont(currentTextEdit,index);
+        this->printWpisAndSetupFont(currentTextEdit,index);
 
-    if(currentWpis + 1 > this->vectorWpisow.size() - 1)
-        this->printLackOfWpis(*ui->nextWpisTextEdit);
-    else
-        this->printWpisAndSetupFont(nextTextEdit,index+1);
+        if(currentWpis + 1 > this->vectorWpisow.size() - 1)
+            this->printLackOfWpis(*ui->nextWpisTextEdit);
+        else
+            this->printWpisAndSetupFont(nextTextEdit,index+1);
+    }
 }
 
 
@@ -237,12 +253,13 @@ void Pamietnik::on_addWpisButton_clicked()
     if(!(ui->trescWpisuTextEdit->toPlainText().isEmpty())){
         Wpis wpis(ui->trescWpisuTextEdit->toPlainText(),ui->dataWpisuDateTime->dateTime());
         if(!(this->checkDuplicatedWpis(wpis)))
-        this->vectorWpisow.push_back(wpis);
+            this->vectorWpisow.push_back(wpis);
 
-       std::sort(this->vectorWpisow.begin(),this->vectorWpisow.end());
+        std::sort(this->vectorWpisow.begin(),this->vectorWpisow.end());
         this->fillListaWpisow();
+        currentWpis = this->vectorWpisow.size() - 1;
+        refreshAllPrintWpis(*ui->previousWpisTextEdit, *ui->currentWpisTextEdit, *ui->nextWpisTextEdit, currentWpis);
     }
-    refreshAllPrintWpis(*ui->previousWpisTextEdit,*ui->currentWpisTextEdit,*ui->nextWpisTextEdit,currentWpis);
 }
 
 
@@ -251,27 +268,35 @@ void Pamietnik::on_previousWpisPushButton_clicked()
     if (currentWpis > 0)
     {
         currentWpis--;
-        if (currentWpis > 0)
-            this->printWpisAndSetupFont(*ui->previousWpisTextEdit, currentWpis - 1);
-        else
-            this->printLackOfWpis(*ui->previousWpisTextEdit);
-
-        this->printWpisAndSetupFont(*ui->currentWpisTextEdit, currentWpis);
-        this->printWpisAndSetupFont(*ui->nextWpisTextEdit, currentWpis + 1);
+        refreshAllPrintWpis(*ui->previousWpisTextEdit, *ui->currentWpisTextEdit, *ui->nextWpisTextEdit, currentWpis);
     }
 }
 
 
 void Pamietnik::on_nextWpispPushButton_clicked()
 {
-    if(currentWpis < this->vectorWpisow.size() - 1){
+    if (currentWpis < this->vectorWpisow.size() - 1)
+    {
         currentWpis++;
-        this->printWpisAndSetupFont(*ui->previousWpisTextEdit,currentWpis-1);
-        this->printWpisAndSetupFont(*ui->currentWpisTextEdit,currentWpis);
-        if(currentWpis + 1 > this->vectorWpisow.size() - 1)
-            this->printLackOfWpis(*ui->nextWpisTextEdit);
-        else
-            this->printWpisAndSetupFont(*ui->nextWpisTextEdit,currentWpis + 1);
+        refreshAllPrintWpis(*ui->previousWpisTextEdit, *ui->currentWpisTextEdit, *ui->nextWpisTextEdit, currentWpis);
     }
+}
+
+
+void Pamietnik::on_removeWpisPushButton_clicked()
+{
+    if (vectorWpisow.empty())
+        return;
+    if (vectorWpisow.size()-1 == 0)
+    {
+        vectorWpisow.erase(vectorWpisow.begin() + currentWpis);
+        currentWpis--;
+        printEmptyVector(*ui->previousWpisTextEdit,*ui->currentWpisTextEdit,*ui->nextWpisTextEdit);
+        return;
+    }
+    vectorWpisow.erase(vectorWpisow.begin() + currentWpis);
+    if (currentWpis > 0)
+        currentWpis--;
+    refreshAllPrintWpis(*ui->previousWpisTextEdit, *ui->currentWpisTextEdit, *ui->nextWpisTextEdit, currentWpis);
 }
 

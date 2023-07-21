@@ -1,9 +1,1 @@
-17.07.2023 23:07:23 | Testowy wpis odświerzania
-17.07.2023 22:51:23 | Testowy wpis odświerzania 2
-17.07.2023 22:50:59 | Testowy dodatkowy wpis
-17.07.2023 22:49:23 | Testowy wpis odświerzania
-17.07.2023 22:49:12 | Testowy wpis do zapisu do pliku
-17.07.2023 19:38:07 | Test1
-02.06.2013 03:14:09 | Test4
-21.05.2012 02:14:07 | Test3
-09.04.2011 17:02:03 | Test2
+21.07.2023 18:39:26 | SER

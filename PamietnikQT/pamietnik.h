@@ -33,6 +33,7 @@ public:
 
 
     void printWpisAndSetupFont(QTextEdit &textEdit, int index);
+    void printEmptyVector(QTextEdit &previousTextEdit, QTextEdit &currentTextEdit, QTextEdit &nextTextEdit);
     void printLackOfWpis(QTextEdit &textEdit);
     void refreshAllPrintWpis(QTextEdit &previousTextEdit, QTextEdit &currentTextEdit, QTextEdit &nextTextEdit ,int index);
     bool checkDuplicatedWpis(Wpis &wpis);
@@ -45,6 +46,8 @@ private slots:
     void on_addWpisButton_clicked();
     void on_previousWpisPushButton_clicked();
     void on_nextWpispPushButton_clicked();
+
+    void on_removeWpisPushButton_clicked();
 
 private:
 

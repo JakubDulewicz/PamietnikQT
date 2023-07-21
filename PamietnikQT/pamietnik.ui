@@ -108,7 +108,7 @@
    <widget class="QPushButton" name="previousWpisPushButton">
     <property name="geometry">
      <rect>
-      <x>60</x>
+      <x>30</x>
       <y>360</y>
       <width>241</width>
       <height>41</height>
@@ -121,7 +121,7 @@
    <widget class="QPushButton" name="nextWpispPushButton">
     <property name="geometry">
      <rect>
-      <x>500</x>
+      <x>520</x>
       <y>360</y>
       <width>241</width>
       <height>41</height>
@@ -129,6 +129,19 @@
     </property>
     <property name="text">
      <string>Nastepne</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="removeWpisPushButton">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>360</y>
+      <width>211</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Usuń Aktualny Wpis</string>
     </property>
    </widget>
   </widget>

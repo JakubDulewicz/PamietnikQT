@@ -34,6 +34,7 @@ public:
     QTextEdit *nextWpisTextEdit;
     QPushButton *previousWpisPushButton;
     QPushButton *nextWpispPushButton;
+    QPushButton *removeWpisPushButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -75,10 +76,13 @@ public:
         nextWpisTextEdit->setGeometry(QRect(30, 260, 741, 81));
         previousWpisPushButton = new QPushButton(centralwidget);
         previousWpisPushButton->setObjectName("previousWpisPushButton");
-        previousWpisPushButton->setGeometry(QRect(60, 360, 241, 41));
+        previousWpisPushButton->setGeometry(QRect(30, 360, 241, 41));
         nextWpispPushButton = new QPushButton(centralwidget);
         nextWpispPushButton->setObjectName("nextWpispPushButton");
-        nextWpispPushButton->setGeometry(QRect(500, 360, 241, 41));
+        nextWpispPushButton->setGeometry(QRect(520, 360, 241, 41));
+        removeWpisPushButton = new QPushButton(centralwidget);
+        removeWpisPushButton->setObjectName("removeWpisPushButton");
+        removeWpisPushButton->setGeometry(QRect(290, 360, 211, 41));
         Pamietnik->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Pamietnik);
         menubar->setObjectName("menubar");
@@ -99,6 +103,7 @@ public:
         addWpisButton->setText(QCoreApplication::translate("Pamietnik", "Dodaj Wpis", nullptr));
         previousWpisPushButton->setText(QCoreApplication::translate("Pamietnik", "Poprzednie", nullptr));
         nextWpispPushButton->setText(QCoreApplication::translate("Pamietnik", "Nastepne", nullptr));
+        removeWpisPushButton->setText(QCoreApplication::translate("Pamietnik", "Usu\305\204 Aktualny Wpis", nullptr));
     } // retranslateUi
 
 };
