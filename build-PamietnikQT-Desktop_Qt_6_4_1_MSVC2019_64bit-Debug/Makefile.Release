@@ -50,16 +50,22 @@ OBJECTS_DIR   = release
 
 ####### Files
 
-SOURCES       = ..\PamietnikQT\main.cpp \
+SOURCES       = ..\PamietnikQT\addwpisform.cpp \
+		..\PamietnikQT\main.cpp \
 		..\PamietnikQT\pamietnik.cpp \
-		..\PamietnikQT\wpis.cpp release\moc_pamietnik.cpp
-OBJECTS       = release\main.obj \
+		..\PamietnikQT\wpis.cpp release\moc_addwpisform.cpp \
+		release\moc_pamietnik.cpp
+OBJECTS       = release\addwpisform.obj \
+		release\main.obj \
 		release\pamietnik.obj \
 		release\wpis.obj \
+		release\moc_addwpisform.obj \
 		release\moc_pamietnik.obj
 
-DIST          =  ..\PamietnikQT\pamietnik.h \
-		..\PamietnikQT\wpis.h ..\PamietnikQT\main.cpp \
+DIST          =  ..\PamietnikQT\addwpisform.h \
+		..\PamietnikQT\pamietnik.h \
+		..\PamietnikQT\wpis.h ..\PamietnikQT\addwpisform.cpp \
+		..\PamietnikQT\main.cpp \
 		..\PamietnikQT\pamietnik.cpp \
 		..\PamietnikQT\wpis.cpp
 QMAKE_TARGET  = PamietnikQT
@@ -136,9 +142,9 @@ DESTDIR_TARGET = release\PamietnikQT.exe
 first: all
 all: Makefile.Release  release\PamietnikQT.exe
 
-release\PamietnikQT.exe: D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\lib\Qt6Widgets.lib D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\lib\Qt6Gui.lib D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\lib\Qt6Core.lib D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\lib\Qt6EntryPoint.lib ui_pamietnik.h $(OBJECTS) 
+release\PamietnikQT.exe: D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\lib\Qt6Widgets.lib D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\lib\Qt6Gui.lib D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\lib\Qt6Core.lib D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\lib\Qt6EntryPoint.lib ui_addwpisform.h ui_pamietnik.h $(OBJECTS) 
 	$(LINKER) $(LFLAGS) /MANIFEST:embed /OUT:$(DESTDIR_TARGET) @<<
-release\main.obj release\pamietnik.obj release\wpis.obj release\moc_pamietnik.obj
+release\addwpisform.obj release\main.obj release\pamietnik.obj release\wpis.obj release\moc_addwpisform.obj release\moc_pamietnik.obj
 $(LIBS)
 <<
 
@@ -148,10 +154,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) PamietnikQT.zip $(SOURCES) $(DIST) ..\PamietnikQT\PamietnikQT.pro D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\spec_pre.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\common\windows-desktop.conf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\win32\windows_vulkan_sdk.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\common\windows-vulkan.conf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\common\msvc-desktop.conf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\qconfig.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_ext_freetype.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_ext_libjpeg.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_ext_libpng.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_charts.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_charts_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_chartsqml.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_chartsqml_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_concurrent.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_concurrent_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_core.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_core_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_dbus.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_dbus_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_designer.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_designer_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_designercomponents_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_entrypoint_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_fb_support_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_freetype_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_gui.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_gui_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_harfbuzz_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_help.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_help_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_jpeg_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_labsanimation.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_labsanimation_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_labsfolderlistmodel.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_labsfolderlistmodel_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_labsqmlmodels.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_labsqmlmodels_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_labssettings.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_labssettings_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_labssharedimage.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_labssharedimage_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_labswavefrontmesh.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_labswavefrontmesh_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_linguist.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_linguist_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_network.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_network_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_opengl.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_opengl_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_openglwidgets.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_openglwidgets_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_packetprotocol_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_png_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_printsupport.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_printsupport_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qml.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qml_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qmlcompiler_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qmlcore.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qmlcore_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qmldebug_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qmldom_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qmlintegration.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qmlintegration_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qmllocalstorage.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qmllocalstorage_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qmlmodels.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qmlmodels_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qmltest.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qmltest_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qmlworkerscript.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qmlxmllistmodel.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qmlxmllistmodel_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quick.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quick_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quickcontrols2.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quickcontrols2impl.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quickcontrols2impl_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quickcontrolstestutilsprivate_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quickdialogs2.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quickdialogs2_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quickdialogs2utils.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quickdialogs2utils_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quicklayouts.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quicklayouts_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quickparticles_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quickshapes_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quicktemplates2.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quicktestutilsprivate_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quickwidgets.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quickwidgets_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_sql.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_sql_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_svg.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_svg_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_svgwidgets.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_svgwidgets_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_testlib.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_testlib_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_tools_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_uiplugin.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_uitools.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_uitools_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_widgets.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_widgets_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_xml.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_xml_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_zlib_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\qt_functions.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\qt_config.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\win32-msvc\qmake.conf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\spec_post.prf .qmake.stash D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\exclusive_builds.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\common\msvc-version.conf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\toolchain.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\default_pre.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\win32\default_pre.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\resolve_config.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\exclusive_builds_post.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\default_post.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\build_pass.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\qml_debug.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\entrypoint.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\precompile_header.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\warn_on.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\qt.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\resources_functions.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\resources.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\moc.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\win32\opengl.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\uic.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\qmake_use.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\file_copies.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\win32\windows.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\testcase_targets.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\exceptions.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\yacc.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\lex.prf ..\PamietnikQT\PamietnikQT.pro D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\lib\Qt6Widgets.prl D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\lib\Qt6Gui.prl D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\lib\Qt6Core.prl D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\lib\Qt6EntryPoint.prl    D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\data\dummy.cpp ..\PamietnikQT\pamietnik.h ..\PamietnikQT\wpis.h  ..\PamietnikQT\main.cpp ..\PamietnikQT\pamietnik.cpp ..\PamietnikQT\wpis.cpp ..\PamietnikQT\pamietnik.ui    
+	$(ZIP) PamietnikQT.zip $(SOURCES) $(DIST) ..\PamietnikQT\PamietnikQT.pro D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\spec_pre.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\common\windows-desktop.conf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\win32\windows_vulkan_sdk.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\common\windows-vulkan.conf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\common\msvc-desktop.conf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\qconfig.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_ext_freetype.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_ext_libjpeg.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_ext_libpng.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_charts.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_charts_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_chartsqml.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_chartsqml_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_concurrent.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_concurrent_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_core.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_core_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_dbus.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_dbus_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_designer.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_designer_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_designercomponents_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_entrypoint_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_fb_support_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_freetype_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_gui.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_gui_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_harfbuzz_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_help.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_help_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_jpeg_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_labsanimation.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_labsanimation_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_labsfolderlistmodel.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_labsfolderlistmodel_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_labsqmlmodels.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_labsqmlmodels_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_labssettings.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_labssettings_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_labssharedimage.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_labssharedimage_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_labswavefrontmesh.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_labswavefrontmesh_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_linguist.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_linguist_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_network.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_network_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_opengl.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_opengl_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_openglwidgets.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_openglwidgets_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_packetprotocol_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_png_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_printsupport.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_printsupport_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qml.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qml_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qmlcompiler_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qmlcore.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qmlcore_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qmldebug_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qmldom_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qmlintegration.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qmlintegration_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qmllocalstorage.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qmllocalstorage_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qmlmodels.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qmlmodels_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qmltest.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qmltest_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qmlworkerscript.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qmlxmllistmodel.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_qmlxmllistmodel_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quick.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quick_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quickcontrols2.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quickcontrols2impl.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quickcontrols2impl_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quickcontrolstestutilsprivate_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quickdialogs2.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quickdialogs2_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quickdialogs2utils.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quickdialogs2utils_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quicklayouts.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quicklayouts_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quickparticles_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quickshapes_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quicktemplates2.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quicktestutilsprivate_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quickwidgets.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_quickwidgets_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_sql.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_sql_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_svg.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_svg_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_svgwidgets.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_svgwidgets_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_testlib.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_testlib_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_tools_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_uiplugin.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_uitools.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_uitools_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_widgets.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_widgets_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_xml.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_xml_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\modules\qt_lib_zlib_private.pri D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\qt_functions.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\qt_config.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\win32-msvc\qmake.conf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\spec_post.prf .qmake.stash D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\exclusive_builds.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\common\msvc-version.conf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\toolchain.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\default_pre.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\win32\default_pre.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\resolve_config.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\exclusive_builds_post.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\default_post.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\build_pass.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\qml_debug.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\entrypoint.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\precompile_header.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\warn_on.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\qt.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\resources_functions.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\resources.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\moc.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\win32\opengl.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\uic.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\qmake_use.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\file_copies.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\win32\windows.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\testcase_targets.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\exceptions.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\yacc.prf D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\lex.prf ..\PamietnikQT\PamietnikQT.pro D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\lib\Qt6Widgets.prl D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\lib\Qt6Gui.prl D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\lib\Qt6Core.prl D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\lib\Qt6EntryPoint.prl    D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\data\dummy.cpp ..\PamietnikQT\addwpisform.h ..\PamietnikQT\pamietnik.h ..\PamietnikQT\wpis.h  ..\PamietnikQT\addwpisform.cpp ..\PamietnikQT\main.cpp ..\PamietnikQT\pamietnik.cpp ..\PamietnikQT\wpis.cpp ..\PamietnikQT\addwpisform.ui ..\PamietnikQT\pamietnik.ui    
 
 clean: compiler_clean 
-	-$(DEL_FILE) release\main.obj release\pamietnik.obj release\wpis.obj release\moc_pamietnik.obj
+	-$(DEL_FILE) release\addwpisform.obj release\main.obj release\pamietnik.obj release\wpis.obj release\moc_addwpisform.obj release\moc_pamietnik.obj
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash
@@ -176,9 +182,150 @@ compiler_moc_predefs_clean:
 release\moc_predefs.h: D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\data\dummy.cpp
 	cl -BxD:\Aplikacje\QTStarte\6.4.1\msvc2019_64\bin\qmake.exe -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -O2 -MD -std:c++17 -utf-8 -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\mkspecs\features\data\dummy.cpp 2>NUL >release\moc_predefs.h
 
-compiler_moc_header_make_all: release\moc_pamietnik.cpp
+compiler_moc_header_make_all: release\moc_addwpisform.cpp release\moc_pamietnik.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) release\moc_pamietnik.cpp
+	-$(DEL_FILE) release\moc_addwpisform.cpp release\moc_pamietnik.cpp
+release\moc_addwpisform.cpp: ..\PamietnikQT\addwpisform.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\QDialog \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qdialog.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qtwidgetsglobal.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qtguiglobal.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qglobal.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qconfig-bootstrapped.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qconfig.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qtcore-config.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qtconfigmacros.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qtcoreexports.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qsystemdetection.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qprocessordetection.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcompilerdetection.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qtypeinfo.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcontainerfwd.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qsysinfo.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qlogging.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qflags.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcompare_impl.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qatomic.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qbasicatomic.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qatomic_bootstrap.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qgenericatomic.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qatomic_cxx11.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qglobalstatic.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qnumeric.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qversiontagging.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qforeach.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qtgui-config.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qtguiexports.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qtwidgets-config.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qtwidgetsexports.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qwidget.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qwindowdefs.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qobjectdefs.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qnamespace.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qtmetamacros.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qobjectdefs_impl.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qwindowdefs_win.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qobject.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qstring.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qchar.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qstringview.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qbytearray.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qrefcount.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qarraydata.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qpair.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qarraydatapointer.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qarraydataops.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcontainertools_impl.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qbytearrayalgorithms.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qbytearrayview.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qstringfwd.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qstringliteral.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qstringalgorithms.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qanystringview.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qutf8stringview.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qstringtokenizer.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qstringbuilder.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qlist.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qhashfunctions.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qiterator.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qbytearraylist.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qstringlist.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qalgorithms.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qstringmatcher.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcoreevent.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qscopedpointer.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qmetatype.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcompare.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qscopeguard.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qdatastream.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qiodevicebase.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qiterable.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qmetacontainer.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcontainerinfo.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qtaggedpointer.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qmath.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qobject_impl.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qbindingstorage.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qmargins.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qaction.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qkeysequence.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qicon.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qsize.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qpixmap.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qpaintdevice.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qrect.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qpoint.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qcolor.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qrgb.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qrgba64.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qsharedpointer.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qshareddata.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qsharedpointer_impl.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qimage.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qpixelformat.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qtransform.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qpolygon.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qregion.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qline.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qvariant.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qdebug.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qtextstream.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qstringconverter_base.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcontiguouscache.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qmap.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qshareddata_impl.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qset.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qhash.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qvarlengtharray.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qpalette.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qbrush.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qfont.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qfontmetrics.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qfontinfo.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qsizepolicy.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qcursor.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qbitmap.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qevent.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qiodevice.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qpointer.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qurl.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qeventpoint.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qvector2d.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qvectornd.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qpointingdevice.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qinputdevice.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qscreen.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\QList \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\QObject \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\QRect \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\QSize \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\QSizeF \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\QTransform \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qnativeinterface.h \
+		release\moc_predefs.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\bin\moc.exe
+	D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include C:/Users/Zusoviron/Desktop/QT/PamietnikQT/build-PamietnikQT-Desktop_Qt_6_4_1_MSVC2019_64bit-Debug/release/moc_predefs.h -ID:/Aplikacje/QTStarte/6.4.1/msvc2019_64/mkspecs/win32-msvc -IC:/Users/Zusoviron/Desktop/QT/PamietnikQT/PamietnikQT -ID:/Aplikacje/QTStarte/6.4.1/msvc2019_64/include -ID:/Aplikacje/QTStarte/6.4.1/msvc2019_64/include/QtWidgets -ID:/Aplikacje/QTStarte/6.4.1/msvc2019_64/include/QtGui -ID:/Aplikacje/QTStarte/6.4.1/msvc2019_64/include/QtCore -I. -ID:\Aplikacje\Microsoft\VisualStudio\VC\Tools\MSVC\14.34.31933\include -ID:\Aplikacje\Microsoft\VisualStudio\VC\Tools\MSVC\14.34.31933\ATLMFC\include -ID:\Aplikacje\Microsoft\VisualStudio\VC\Auxiliary\VS\include -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" ..\PamietnikQT\addwpisform.h -o release\moc_addwpisform.cpp
+
 release\moc_pamietnik.cpp: ..\PamietnikQT\pamietnik.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\QMainWindow \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qmainwindow.h \
@@ -318,6 +465,9 @@ release\moc_pamietnik.cpp: ..\PamietnikQT\pamietnik.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qnativeinterface.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qtabwidget.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\QDebug \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\QFile \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qfile.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qfiledevice.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qtextedit.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qabstractscrollarea.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qframe.h \
@@ -332,6 +482,9 @@ release\moc_pamietnik.cpp: ..\PamietnikQT\pamietnik.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcalendar.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qlocale.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\QString \
+		..\PamietnikQT\addwpisform.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\QDialog \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qdialog.h \
 		release\moc_predefs.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\bin\moc.exe
 	D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include C:/Users/Zusoviron/Desktop/QT/PamietnikQT/build-PamietnikQT-Desktop_Qt_6_4_1_MSVC2019_64bit-Debug/release/moc_predefs.h -ID:/Aplikacje/QTStarte/6.4.1/msvc2019_64/mkspecs/win32-msvc -IC:/Users/Zusoviron/Desktop/QT/PamietnikQT/PamietnikQT -ID:/Aplikacje/QTStarte/6.4.1/msvc2019_64/include -ID:/Aplikacje/QTStarte/6.4.1/msvc2019_64/include/QtWidgets -ID:/Aplikacje/QTStarte/6.4.1/msvc2019_64/include/QtGui -ID:/Aplikacje/QTStarte/6.4.1/msvc2019_64/include/QtCore -I. -ID:\Aplikacje\Microsoft\VisualStudio\VC\Tools\MSVC\14.34.31933\include -ID:\Aplikacje\Microsoft\VisualStudio\VC\Tools\MSVC\14.34.31933\ATLMFC\include -ID:\Aplikacje\Microsoft\VisualStudio\VC\Auxiliary\VS\include -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" ..\PamietnikQT\pamietnik.h -o release\moc_pamietnik.cpp
@@ -340,9 +493,13 @@ compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_pamietnik.h
+compiler_uic_make_all: ui_addwpisform.h ui_pamietnik.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_pamietnik.h
+	-$(DEL_FILE) ui_addwpisform.h ui_pamietnik.h
+ui_addwpisform.h: ..\PamietnikQT\addwpisform.ui \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\bin\uic.exe
+	D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\bin\uic.exe ..\PamietnikQT\addwpisform.ui -o ui_addwpisform.h
+
 ui_pamietnik.h: ..\PamietnikQT\pamietnik.ui \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\bin\uic.exe
 	D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\bin\uic.exe ..\PamietnikQT\pamietnik.ui -o ui_pamietnik.h
@@ -358,6 +515,145 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 
 
 ####### Compile
+
+release\addwpisform.obj: ..\PamietnikQT\addwpisform.cpp ..\PamietnikQT\addwpisform.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\QDialog \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qdialog.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qtwidgetsglobal.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qtguiglobal.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qglobal.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qconfig-bootstrapped.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qconfig.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qtcore-config.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qtconfigmacros.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qtcoreexports.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qsystemdetection.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qprocessordetection.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcompilerdetection.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qtypeinfo.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcontainerfwd.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qsysinfo.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qlogging.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qflags.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcompare_impl.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qatomic.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qbasicatomic.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qatomic_bootstrap.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qgenericatomic.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qatomic_cxx11.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qglobalstatic.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qnumeric.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qversiontagging.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qforeach.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qtgui-config.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qtguiexports.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qtwidgets-config.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qtwidgetsexports.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qwidget.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qwindowdefs.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qobjectdefs.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qnamespace.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qtmetamacros.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qobjectdefs_impl.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qwindowdefs_win.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qobject.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qstring.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qchar.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qstringview.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qbytearray.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qrefcount.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qarraydata.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qpair.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qarraydatapointer.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qarraydataops.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcontainertools_impl.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qbytearrayalgorithms.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qbytearrayview.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qstringfwd.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qstringliteral.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qstringalgorithms.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qanystringview.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qutf8stringview.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qstringtokenizer.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qstringbuilder.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qlist.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qhashfunctions.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qiterator.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qbytearraylist.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qstringlist.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qalgorithms.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qstringmatcher.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcoreevent.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qscopedpointer.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qmetatype.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcompare.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qscopeguard.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qdatastream.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qiodevicebase.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qiterable.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qmetacontainer.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcontainerinfo.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qtaggedpointer.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qmath.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qobject_impl.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qbindingstorage.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qmargins.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qaction.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qkeysequence.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qicon.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qsize.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qpixmap.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qpaintdevice.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qrect.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qpoint.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qcolor.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qrgb.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qrgba64.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qsharedpointer.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qshareddata.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qsharedpointer_impl.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qimage.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qpixelformat.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qtransform.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qpolygon.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qregion.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qline.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qvariant.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qdebug.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qtextstream.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qstringconverter_base.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcontiguouscache.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qmap.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qshareddata_impl.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qset.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qhash.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qvarlengtharray.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qpalette.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qbrush.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qfont.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qfontmetrics.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qfontinfo.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qsizepolicy.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qcursor.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qbitmap.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qevent.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qiodevice.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qpointer.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qurl.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qeventpoint.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qvector2d.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qvectornd.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qpointingdevice.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qinputdevice.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\qscreen.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\QList \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\QObject \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\QRect \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\QSize \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\QSizeF \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtGui\QTransform \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qnativeinterface.h \
+		ui_addwpisform.h
 
 release\main.obj: ..\PamietnikQT\main.cpp ..\PamietnikQT\pamietnik.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\QMainWindow \
@@ -498,6 +794,9 @@ release\main.obj: ..\PamietnikQT\main.cpp ..\PamietnikQT\pamietnik.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qnativeinterface.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qtabwidget.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\QDebug \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\QFile \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qfile.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qfiledevice.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qtextedit.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qabstractscrollarea.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qframe.h \
@@ -512,6 +811,9 @@ release\main.obj: ..\PamietnikQT\main.cpp ..\PamietnikQT\pamietnik.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcalendar.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qlocale.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\QString \
+		..\PamietnikQT\addwpisform.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\QDialog \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qdialog.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\QApplication \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qapplication.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcoreapplication.h \
@@ -674,6 +976,9 @@ release\pamietnik.obj: ..\PamietnikQT\pamietnik.cpp ..\PamietnikQT\pamietnik.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qnativeinterface.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qtabwidget.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\QDebug \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\QFile \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qfile.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qfiledevice.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qtextedit.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qabstractscrollarea.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qframe.h \
@@ -688,6 +993,9 @@ release\pamietnik.obj: ..\PamietnikQT\pamietnik.cpp ..\PamietnikQT\pamietnik.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qcalendar.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qlocale.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\QString \
+		..\PamietnikQT\addwpisform.h \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\QDialog \
+		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\qdialog.h \
 		ui_pamietnik.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\QVariant \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtWidgets\QApplication \
@@ -816,6 +1124,8 @@ release\wpis.obj: ..\PamietnikQT\wpis.cpp ..\PamietnikQT\wpis.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qobject_impl.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\qbindingstorage.h \
 		D:\Aplikacje\QTStarte\6.4.1\msvc2019_64\include\QtCore\QString
+
+release\moc_addwpisform.obj: release\moc_addwpisform.cpp 
 
 release\moc_pamietnik.obj: release\moc_pamietnik.cpp 
 

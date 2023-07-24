@@ -235,6 +235,22 @@ void Pamietnik::refreshAllPrintWpis(QTextEdit &previousTextEdit, QTextEdit &curr
     }
 }
 
+void Pamietnik::generateWpisSortAndPrintWpises(QString content, QDateTime dateTime)
+{
+    if(!(content.isEmpty()))
+    {
+        Wpis wpis(content, dateTime);
+        if(!(this->checkDuplicatedWpis(wpis)))
+            this->vectorWpisow.push_back(wpis);
+
+        std::sort(this->vectorWpisow.begin(),this->vectorWpisow.end());
+        this->fillListaWpisow();
+        currentWpis = this->vectorWpisow.size() - 1;
+        refreshAllPrintWpis(*ui->previousWpisTextEdit, *ui->currentWpisTextEdit, *ui->nextWpisTextEdit, currentWpis);
+    }
+}
+
+
 
 bool Pamietnik::checkDuplicatedWpis(Wpis &wpis)
 {
@@ -250,16 +266,12 @@ bool Pamietnik::checkDuplicatedWpis(Wpis &wpis)
 
 void Pamietnik::on_addWpisButton_clicked()
 {
-    if(!(ui->trescWpisuTextEdit->toPlainText().isEmpty())){
-        Wpis wpis(ui->trescWpisuTextEdit->toPlainText(),ui->dataWpisuDateTime->dateTime());
-        if(!(this->checkDuplicatedWpis(wpis)))
-            this->vectorWpisow.push_back(wpis);
 
-        std::sort(this->vectorWpisow.begin(),this->vectorWpisow.end());
-        this->fillListaWpisow();
-        currentWpis = this->vectorWpisow.size() - 1;
-        refreshAllPrintWpis(*ui->previousWpisTextEdit, *ui->currentWpisTextEdit, *ui->nextWpisTextEdit, currentWpis);
-    }
+    addWpis = new addWpisForm(nullptr);
+    int result = addWpis->exec();
+    if(result)
+        generateWpisSortAndPrintWpises(addWpis->getText(), addWpis->getDateTime());
+    delete addWpis;
 }
 
 
